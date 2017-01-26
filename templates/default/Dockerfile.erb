@@ -1,0 +1,11 @@
+FROM ubuntu:14.04
+MAINTAINER Vijay Singh, Inc <vijay.thakur0909@gmail.com>
+
+RUN apt-get -yqq update && apt-get install -y build-essential python python-dev ruby ruby-dev python-pip python-setuptools
+RUN apt-get install -y libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+RUN apt-get install -y python python-setuptools python-dev build-essential libmysqlclient-dev libjpeg-turbo8-dev
+RUN pip install south django-compressor
+RUN pip install pillow==2.9.0
+RUN pip install mezzanine
+RUN pip install mysql-python
+RUN mezzanine-project myproject
